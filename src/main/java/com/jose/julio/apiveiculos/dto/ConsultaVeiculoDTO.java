@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 public class ConsultaVeiculoDTO {
-    private String chave; // Pode ser 'marca' ou 'decada'
+    private String chave; // Pode ser 'fabricante' ou 'decada'
     private String descricao;
     private Long quantidade;
 }

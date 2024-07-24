@@ -48,16 +48,16 @@ public class VeiculoService {
         return (List<Veiculo>) veiculoRepository.findAll();
     }
 
-    public List<Veiculo> listarVeiculosNaoVendidos() {
-        return veiculoRepository.findByVendidoFalse();
+    public Long qtdVeiculosNaoVendidos() {
+        return veiculoRepository.qtdVeiculosNaoVendidos();
     }
 
     public List<ConsultaVeiculoDTO> qtdVeiculosAgrupadosPorDecada() {
         return veiculoRepository.qtdVeiculosAgrupadosPorDecada();
     }
 
-    public List<ConsultaVeiculoDTO> qtdVeiculosAgrupadosPorMarca() {
-        return veiculoRepository.qtdVeiculosAgrupadosPorMarca();
+    public List<ConsultaVeiculoDTO> qtdVeiculosAgrupadosPorFabricante() {
+        return veiculoRepository.qtdVeiculosAgrupadosPorFabricante();
     }
 
     public List<Veiculo> listarVeiculosRegistradosNaUltimaSemana() {

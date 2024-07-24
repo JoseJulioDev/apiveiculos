@@ -4,6 +4,9 @@ import com.jose.julio.apiveiculos.dto.ConsultaVeiculoDTO;
 import com.jose.julio.apiveiculos.dto.VeiculoDTO;
 import com.jose.julio.apiveiculos.model.Veiculo;
 import com.jose.julio.apiveiculos.service.VeiculoService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -50,6 +53,11 @@ public class VeiculoController {
         }
     }
 
+
+    @Operation(description = "Retorna todos os Veículos cadastrados")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Todos Veículos")
+    })
     @GetMapping
     public ResponseEntity<List<Veiculo>> listarTodosVeiculos() {
         List<Veiculo> veiculos = veiculoService.listarTodosVeiculos();
@@ -57,8 +65,8 @@ public class VeiculoController {
     }
 
     @GetMapping("/nao-vendidos")
-    public ResponseEntity<List<Veiculo>> listarVeiculosNaoVendidos() {
-        List<Veiculo> veiculos = veiculoService.listarVeiculosNaoVendidos();
+    public ResponseEntity<Long> listarVeiculosNaoVendidos() {
+        Long veiculos = veiculoService.qtdVeiculosNaoVendidos();
         return ResponseEntity.ok(veiculos);
     }
 
@@ -70,7 +78,7 @@ public class VeiculoController {
 
     @GetMapping("/por-fabricante")
     public ResponseEntity<List<ConsultaVeiculoDTO>> listarQtdVeiculosPorMarca() {
-        List<ConsultaVeiculoDTO> qtdVeiculosPorMarca = veiculoService.qtdVeiculosAgrupadosPorMarca();
+        List<ConsultaVeiculoDTO> qtdVeiculosPorMarca = veiculoService.qtdVeiculosAgrupadosPorFabricante();
         return ResponseEntity.ok(qtdVeiculosPorMarca);
     }
 

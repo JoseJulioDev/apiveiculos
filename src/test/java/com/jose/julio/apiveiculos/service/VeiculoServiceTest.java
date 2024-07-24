@@ -129,14 +129,12 @@ public class VeiculoServiceTest {
 
     @Test
     public void testListarVeiculosNaoVendidos() {
-        Veiculo veiculo1 = new Veiculo();
-        Veiculo veiculo2 = new Veiculo();
 
-        when(veiculoRepository.findByVendidoFalse()).thenReturn(Arrays.asList(veiculo1, veiculo2));
+        when(veiculoRepository.qtdVeiculosNaoVendidos()).thenReturn(2L);
 
-        List<Veiculo> veiculosNaoVendidos = veiculoService.listarVeiculosNaoVendidos();
+        Long qtdVeiculosNaoVendidos = veiculoService.qtdVeiculosNaoVendidos();
 
-        assertEquals(2, veiculosNaoVendidos.size());
+        assertEquals(2L, qtdVeiculosNaoVendidos);
     }
 
     @Test
@@ -156,9 +154,9 @@ public class VeiculoServiceTest {
         ConsultaVeiculoDTO dto1 = new ConsultaVeiculoDTO();
         ConsultaVeiculoDTO dto2 = new ConsultaVeiculoDTO();
 
-        when(veiculoRepository.qtdVeiculosAgrupadosPorMarca()).thenReturn(Arrays.asList(dto1, dto2));
+        when(veiculoRepository.qtdVeiculosAgrupadosPorFabricante()).thenReturn(Arrays.asList(dto1, dto2));
 
-        List<ConsultaVeiculoDTO> veiculosPorMarca = veiculoService.qtdVeiculosAgrupadosPorMarca();
+        List<ConsultaVeiculoDTO> veiculosPorMarca = veiculoService.qtdVeiculosAgrupadosPorFabricante();
 
         assertEquals(2, veiculosPorMarca.size());
     }

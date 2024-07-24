@@ -12,12 +12,13 @@ import java.util.List;
 @Repository
 public interface VeiculoRepository extends CrudRepository<Veiculo, Long> {
 
-    List<Veiculo> findByVendidoFalse();
+    @Query("SELECT COUNT(v) FROM Veiculo v WHERE v.vendido = false")
+    Long qtdVeiculosNaoVendidos();
 
-    @Query("SELECT NEW com.jose.julio.apiveiculos.dto.ConsultaVeiculoDTO('marca', v.marca, COUNT(v)) FROM Veiculo v GROUP BY v.marca")
-    List<ConsultaVeiculoDTO> qtdVeiculosAgrupadosPorMarca();
+    @Query("SELECT NEW com.jose.julio.apiveiculos.dto.ConsultaVeiculoDTO('fabricante', v.marca, COUNT(v)) FROM Veiculo v GROUP BY v.marca")
+    List<ConsultaVeiculoDTO> qtdVeiculosAgrupadosPorFabricante();
 
-    @Query("SELECT NEW com.jose.julio.apiveiculos.dto.ConsultaVeiculoDTO('decada', CONCAT(CAST(FLOOR(v.ano / 10) AS string), '0s'), COUNT(v)) FROM Veiculo v GROUP BY FLOOR(v.ano / 10)")
+    @Query("SELECT NEW com.jose.julio.apiveiculos.dto.ConsultaVeiculoDTO('década', CONCAT(CAST(FLOOR(v.ano / 10) * 10 AS string)), COUNT(v)) FROM Veiculo v GROUP BY FLOOR(v.ano / 10) ORDER BY FLOOR(v.ano / 10)")
     List<ConsultaVeiculoDTO> qtdVeiculosAgrupadosPorDecada();
 
 
