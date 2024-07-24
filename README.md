@@ -11,15 +11,15 @@
  - http://localhost:8080/swagger-ui/index.html#/ 
 
 ### Aqui está os endpoints da API:
-  GET /veiculos: Retorna todos os veículos cadastrados.
-  GET /veiculos/{id}: Retorna um veículo específico pelo ID.
-  POST /veiculos: Cadastra um novo veículo.
-  PUT /veiculos/{id}: Atualiza um veículo existente pelo ID.
-  DELETE /veiculos/{id}: Exclui um veículo pelo ID.
-  GET /veiculos/nao-vendidos: Retorna a quantidade de veículos não vendidos.
-  GET /veiculos/por-decada: Retorna a quantidade de veículos agrupados por década.
-  GET /veiculos/por-fabricante: Retorna a quantidade de veículos agrupados por fabricante.
-  GET /veiculos/registrados-ultima-semana: Retorna os veículos registrados na última semana.
+  - GET /veiculos: Retorna todos os veículos cadastrados.
+  - GET /veiculos/{id}: Retorna um veículo específico pelo ID.
+  - POST /veiculos: Cadastra um novo veículo.
+  - PUT /veiculos/{id}: Atualiza um veículo existente pelo ID.
+  - DELETE /veiculos/{id}: Exclui um veículo pelo ID.
+  - GET /veiculos/nao-vendidos: Retorna a quantidade de veículos não vendidos.
+  - GET /veiculos/por-decada: Retorna a quantidade de veículos agrupados por década.
+  - GET /veiculos/por-fabricante: Retorna a quantidade de veículos agrupados por fabricante.
+  - GET /veiculos/registrados-ultima-semana: Retorna os veículos registrados na última semana.
 
 ### URL base da API: http://localhost:8080
 
