@@ -22,9 +22,3 @@
   - GET /veiculos/registrados-ultima-semana: Retorna os veículos registrados na última semana.
 
 ### URL base da API: http://localhost:8080
-
-#### A Resolução dos exercicios 1,2,3 e 4 encontra-se no pacote https://github.com/JoseJulioDev/apiveiculos/tree/main/src/main/java/com/jose/julio/apiveiculos/algoritmos
- resolução exercicio1 https://github.com/JoseJulioDev/apiveiculos/tree/main/src/main/java/com/jose/julio/apiveiculos/algoritmos/exercicio1
- resolução exercicio2 https://github.com/JoseJulioDev/apiveiculos/tree/main/src/main/java/com/jose/julio/apiveiculos/algoritmos/exercicio2
- resolução exercicio3 https://github.com/JoseJulioDev/apiveiculos/tree/main/src/main/java/com/jose/julio/apiveiculos/algoritmos/exercicio3
- resolução exercicio4 https://github.com/JoseJulioDev/apiveiculos/tree/main/src/main/java/com/jose/julio/apiveiculos/algoritmos/exercicio4
